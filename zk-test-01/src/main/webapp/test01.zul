@@ -1,0 +1,10 @@
+<?page title="test01" contentType="text/html;charset=UTF-8"?>
+<zk>
+  <window id="windowsTest01" width="270px" Height="250px" apply="org.test.zk.CTest01Controller" title="test01" border="normal">
+    <button id="buttonTest01" label="Test01" />
+    <button id="buttonMiSuperBoton" label="Boton2" />
+    <button id="buttonTest03" label="Make Modal" />
+    <selectbox id="selectBox01" />
+    <selectbox id="selectBox02" />
+  </window>
+</zk>
