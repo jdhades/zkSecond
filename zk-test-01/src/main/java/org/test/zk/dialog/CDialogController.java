@@ -11,12 +11,16 @@ import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Selectbox;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Window;
 
 
 public class CDialogController extends SelectorComposer<Component> {
 
      private static final long serialVersionUID = -8977563222707532143L;
      protected ListModelList<String> dataModel = new ListModelList<String>();
+     
+     @Wire
+     Window windowPerson;
      
      @Wire
      Label labelId;
@@ -81,8 +85,8 @@ public class CDialogController extends SelectorComposer<Component> {
      @Listen("onClick=#buttonCancelar")
      public void onClickButtonCancelar(Event event){
          
-         Messagebox.show("Cancelar", "Cancelar", Messagebox.OK, Messagebox.INFORMATION);
-         
+         //Messagebox.show("Cancelar", "Cancelar", Messagebox.OK, Messagebox.INFORMATION);
+         windowPerson.detach();
          //System.out.println( "hola cancelar" );
      }
 }

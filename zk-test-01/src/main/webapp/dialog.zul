@@ -1,12 +1,19 @@
 <?page title="Person" contentType="text/html;charset=UTF-8"?>
 <zk>
-  <window apply="org.test.zk.dialog.CDialogController" title="Person" border="normal" hflex='min'>
+  <window id="windowPerson" xmlns:w="client" apply="org.test.zk.dialog.CDialogController" title="Person" border="normal" hflex='min'>
     <vlayout hflex="min">
       <grid hflex="min">
         <rows>
           <row>
             <label id="levelId" value="Id:" width="150px" />
-            <textbox id="textId" value="" width="150px" tabindex="1" />
+            <textbox id="textId" value="" width="150px" tabindex="1" >
+             <attribute w:name="doKeyPress_">
+                            
+               <![CDATA[ function(evt) { if (!this._shallIgnore(evt, "0123456789")) this.$doKeyPress_(evt); } ]]>
+            
+             </attribute>
+            
+            </textbox>
           </row>
           <row>
             <label id="levelNombre" value="Nombre:" width="150px" />
